@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasir POS</title>
+<link rel="stylesheet" href="../assets/css/kasir.css">
+</head>
+<body>
+<div class="kasir-app">
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>Kasir</h1>
+      <p>POS</p>
+    </div>
+    <nav class="menu">
+      <a class="active">POS</a>
+      <a>Riwayat Transaksi</a>
+      <a>Logout</a>
+    </nav>
+  </aside>
+
+  <main class="kasir-main">
+    <header class="kasir-header">
+      <div>
+        <h2>Kasir </h2>
+        <p>Tambahkan produk ke keranjang dan cetak struk dengan cepat.</p>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section class="kasir-grid">
+      <div class="product-panel">
+        <div class="panel-head">
+          <h3>Daftar Produk</h3>
+        </div>
+        <div id="productList" class="product-grid"></div>
+      </div>
+
+      <div class="cart-panel">
+        <div class="panel-head">
+          <h3>Keranjang</h3>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Produk</th>
+                <th>Qty</th>
+                <th>Harga</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="cartTable"></tbody>
+          </table>
+        </div>
+        <div class="summary">
+          <div>
+            <span>Invoice</span>
+            <strong id="invoiceNumber">-</strong>
+          </div>
+          <div>
+            <span>Total Belanja</span>
+            <strong id="totalBelanja">Rp 0</strong>
+          </div>
+        </div>
+        <div class="cart-actions">
+          <button onclick="checkout()">Checkout</button>
+          <button class="secondary" onclick="cetakStruk()">Cetak Struk</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="../assets/js/kasir-protect.js"></script>
+<script src="../assets/js/kasir.js"></script>
+</body>
+</html>

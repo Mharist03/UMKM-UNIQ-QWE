@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+<div class="admin-app">
+  <aside class="sidebar">
+    <div class="brand-wrap">
+      <h1>UMKM POS</h1>
+      <p>Admin</p>
+    </div>
+    <nav class="nav-menu">
+      <a class="active">Dashboard</a>
+      <a>Produk</a>
+      <a>User</a>
+      <a>Transaksi</a>
+      <button onclick="logout()">Logout</button>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <header class="topbar">
+      <div>
+        <h2>Dashboard Admin</h2>
+        <p>Kelola produk dan pantau stok dengan cepat.</p>
+      </div>
+      <div class="top-right">
+        <div class="user-chip">Halo, Admin</div>
+      </div>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card blue">
+        <span>Total Produk</span>
+        <h3 id="totalProduk">0</h3>
+      </article>
+      <article class="stat-card green">
+        <span>Total Stok</span>
+        <h3 id="totalStok">0</h3>
+      </article>
+      <article class="stat-card orange">
+        <span>Stok Menipis</span>
+        <h3 id="stokMenipis">0</h3>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <div class="form-box">
+        <div class="box-head">
+          <h3>Tambah / Edit Produk</h3>
+        </div>
+        <label>
+          <span>Nama Produk</span>
+          <input type="text" id="nama" placeholder="Nama Produk">
+        </label>
+        <label>
+          <span>Kategori</span>
+          <select id="kategori">
+            <option value="Makanan">Makanan</option>
+            <option value="Minuman">Minuman</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </label>
+        <div class="row-input">
+          <label>
+            <span>Harga</span>
+            <input type="number" id="harga" placeholder="Harga">
+          </label>
+          <label>
+            <span>Stok</span>
+            <input type="number" id="stok" placeholder="Stok">
+          </label>
+        </div>
+        <button onclick="simpanProduk()">Simpan Produk</button>
+      </div>
+
+      <div class="table-box">
+        <div class="box-head">
+          <h3>Daftar Produk</h3>
+          <input type="text" id="search" placeholder="Cari Produk..." onkeyup="cariProduk()">
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/js/admin-protect.js"></script>
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>
